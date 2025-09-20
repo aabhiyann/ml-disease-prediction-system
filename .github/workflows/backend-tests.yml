@@ -48,7 +48,7 @@ jobs:
     - name: Test with pytest
       run: |
         cd backend
-        pytest tests/ -v --cov=services --cov=app_refactored --cov-report=xml
+        python -m pytest tests/ -v --cov=services --cov=app_refactored --cov-report=xml
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
