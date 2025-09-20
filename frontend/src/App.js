@@ -1,6 +1,6 @@
-import './App.css';
-import HomePage from './components/HomePage';
-import DiseaseForm from './components/DiseaseForm';
+import './styles/globals.css';
+import HomePageModern from './components/HomePageModern';
+import DiseaseFormModern from './components/DiseaseFormModern';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -9,10 +9,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <HomePageModern />
           </Route>
           <Route exact path="/form">
-            <DiseaseForm />
+            <DiseaseFormModern />
           </Route>
         </Switch>
       </Router>
