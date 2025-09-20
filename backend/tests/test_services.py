@@ -5,6 +5,10 @@ import pytest
 import pandas as pd
 import numpy as np
 from unittest.mock import patch, MagicMock
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from services.data_service import DataService
 from services.prediction_service import PredictionService
 

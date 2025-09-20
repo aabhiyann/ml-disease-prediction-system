@@ -4,6 +4,10 @@ API tests for the ML Disease Prediction system
 import pytest
 import json
 from unittest.mock import patch, MagicMock
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from app_refactored import create_app
 
 @pytest.fixture
