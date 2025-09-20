@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd frontend
-        npm ci
+        npm ci --legacy-peer-deps
     
     - name: Run ESLint
       run: |
@@ -43,7 +43,7 @@ jobs:
     - name: Build application
       run: |
         cd frontend
-        npm run build
+        npm run build --legacy-peer-deps
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3

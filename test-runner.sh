@@ -60,7 +60,7 @@ echo "=============="
 # Install frontend dependencies
 echo "Installing frontend dependencies..."
 cd ../frontend
-npm install --silent
+npm install --silent --legacy-peer-deps
 
 # Run frontend tests
 if run_test "Frontend Component Tests" "npm test -- --watchAll=false --passWithNoTests" "frontend"; then
