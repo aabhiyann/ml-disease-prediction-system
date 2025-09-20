@@ -1,6 +1,6 @@
 import './App.css';
 import HomePage from './components/HomePage';
-import Form from './components/Form';
+import DiseaseForm from './components/DiseaseForm';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
             <HomePage />
           </Route>
           <Route exact path="/form">
-            <Form />
+            <DiseaseForm />
           </Route>
         </Switch>
       </Router>
