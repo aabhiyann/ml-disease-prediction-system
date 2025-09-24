@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useHistory } from 'react-router-dom';
-import homeimage from '../images/homeimage.png';
-import logo from '../images/logo.png';
-import Button from './ui/Button';
-import Card, { CardContent } from './ui/Card';
+import React from "react";
+import { motion } from "framer-motion";
+import { useHistory } from "react-router-dom";
+import homeimage from "../images/homeimage.png";
+import logo from "../images/logo.png";
+import Button from "./ui/Button";
+import { Card, CardContent } from "./ui/Card";
 
 const HomePageModern = () => {
   const history = useHistory();
@@ -12,47 +12,90 @@ const HomePageModern = () => {
   const features = [
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
         </svg>
       ),
-      title: '99.6% Accuracy',
-      description: 'Advanced machine learning model trained on thousands of medical records'
+      title: "99.6% Accuracy",
+      description:
+        "Advanced machine learning model trained on thousands of medical records",
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
         </svg>
       ),
-      title: 'Instant Results',
-      description: 'Get AI-powered predictions in seconds with detailed analysis'
+      title: "Instant Results",
+      description:
+        "Get AI-powered predictions in seconds with detailed analysis",
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+          />
         </svg>
       ),
-      title: 'Secure & Private',
-      description: 'Your data is encrypted and never stored permanently'
+      title: "Secure & Private",
+      description: "Your data is encrypted and never stored permanently",
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+          />
         </svg>
       ),
-      title: 'AI-Powered',
-      description: 'Cutting-edge artificial intelligence for accurate disease prediction'
-    }
+      title: "AI-Powered",
+      description:
+        "Cutting-edge artificial intelligence for accurate disease prediction",
+    },
   ];
 
   const stats = [
-    { number: '41', label: 'Diseases' },
-    { number: '132', label: 'Symptoms' },
-    { number: '4,920', label: 'Medical Records' },
-    { number: '99.6%', label: 'Accuracy' }
+    { number: "41", label: "Diseases" },
+    { number: "132", label: "Symptoms" },
+    { number: "4,920", label: "Medical Records" },
+    { number: "99.6%", label: "Accuracy" },
   ];
 
   return (
@@ -111,8 +154,8 @@ const HomePageModern = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              Get instant, accurate disease predictions powered by advanced machine learning. 
-              Your health insights, simplified.
+              Get instant, accurate disease predictions powered by advanced
+              machine learning. Your health insights, simplified.
             </motion.p>
 
             {/* CTA Button */}
@@ -123,25 +166,35 @@ const HomePageModern = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Button
-                onClick={() => history.push('/form')}
+                onClick={() => history.push("/form")}
                 size="xl"
                 className="bg-white text-primary-600 hover:bg-gray-50 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300"
                 icon={
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
                   </svg>
                 }
               >
                 Start Prediction
               </Button>
-              
+
               <Button
                 variant="outline"
                 size="xl"
                 className="border-white text-white hover:bg-white hover:text-primary-600"
                 onClick={() => {
-                  const element = document.getElementById('features');
-                  element?.scrollIntoView({ behavior: 'smooth' });
+                  const element = document.getElementById("features");
+                  element?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Learn More
@@ -214,8 +267,8 @@ const HomePageModern = () => {
               Why Choose Our AI?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our advanced machine learning system provides accurate, instant disease predictions 
-              to help guide your healthcare decisions.
+              Our advanced machine learning system provides accurate, instant
+              disease predictions to help guide your healthcare decisions.
             </p>
           </motion.div>
 
@@ -261,16 +314,26 @@ const HomePageModern = () => {
               Ready to Get Started?
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Experience the power of AI-driven disease prediction. 
-              Get instant insights to help guide your healthcare decisions.
+              Experience the power of AI-driven disease prediction. Get instant
+              insights to help guide your healthcare decisions.
             </p>
             <Button
-              onClick={() => history.push('/form')}
+              onClick={() => history.push("/form")}
               size="xl"
               className="bg-white text-primary-600 hover:bg-gray-50 shadow-2xl"
               icon={
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
                 </svg>
               }
             >
@@ -293,7 +356,7 @@ const HomePageModern = () => {
               AI-Powered Disease Prediction System
             </p>
             <p className="text-sm text-gray-500">
-              © 2024 MedicoAssist. All rights reserved. | 
+              © 2024 MedicoAssist. All rights reserved. |
               <span className="ml-2">For educational purposes only</span>
             </p>
           </div>

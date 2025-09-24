@@ -4,45 +4,16 @@
 import axios from 'axios';
 import { API_ENDPOINTS, API_TIMEOUT } from '../config/api';
 
-// Create axios instance with default config
-const apiClient = axios.create({
-  timeout: API_TIMEOUT,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-// Request interceptor
-apiClient.interceptors.request.use(
-  (config) => {
-    console.log(`Making ${config.method?.toUpperCase()} request to ${config.url}`);
-    return config;
-  },
-  (error) => {
-    console.error('Request error:', error);
-    return Promise.reject(error);
-  }
-);
-
-// Response interceptor
-apiClient.interceptors.response.use(
-  (response) => {
-    console.log(`Response received from ${response.config.url}:`, response.status);
-    return response;
-  },
-  (error) => {
-    console.error('Response error:', error);
-    return Promise.reject(error);
-  }
-);
-
 export const apiService = {
   /**
    * Check API health
    */
   async checkHealth() {
     try {
-      const response = await apiClient.get(API_ENDPOINTS.HEALTH);
+      const response = await axios.get(API_ENDPOINTS.HEALTH, {
+        timeout: API_TIMEOUT,
+        headers: { 'Content-Type': 'application/json' },
+      });
       return response.data;
     } catch (error) {
       throw new Error(`Health check failed: ${error.message}`);
@@ -54,7 +25,10 @@ export const apiService = {
    */
   async getSymptoms() {
     try {
-      const response = await apiClient.get(API_ENDPOINTS.SYMPTOMS);
+      const response = await axios.get(API_ENDPOINTS.SYMPTOMS, {
+        timeout: API_TIMEOUT,
+        headers: { 'Content-Type': 'application/json' },
+      });
       return response.data.symptoms;
     } catch (error) {
       throw new Error(`Failed to fetch symptoms: ${error.message}`);
@@ -66,7 +40,10 @@ export const apiService = {
    */
   async getDiseases() {
     try {
-      const response = await apiClient.get(API_ENDPOINTS.DISEASES);
+      const response = await axios.get(API_ENDPOINTS.DISEASES, {
+        timeout: API_TIMEOUT,
+        headers: { 'Content-Type': 'application/json' },
+      });
       return response.data.diseases;
     } catch (error) {
       throw new Error(`Failed to fetch diseases: ${error.message}`);
@@ -78,9 +55,14 @@ export const apiService = {
    */
   async predictDisease(symptoms) {
     try {
-      const response = await apiClient.post(API_ENDPOINTS.PREDICT, {
-        symptoms: symptoms,
-      });
+      const response = await axios.post(
+        API_ENDPOINTS.PREDICT,
+        { symptoms: symptoms },
+        {
+          timeout: API_TIMEOUT,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
       return response.data;
     } catch (error) {
       if (error.response?.data?.error) {

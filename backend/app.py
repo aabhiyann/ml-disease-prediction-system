@@ -117,7 +117,7 @@ def SVM(symptoms):
 
     total_symptoms = [symptoms + nulls_required]
 
-    pred2 = model.predict(total_symptoms)
+    pred2 = rf_model.predict(total_symptoms)
 
     return list(pred2)
 

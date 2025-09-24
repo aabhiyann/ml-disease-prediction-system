@@ -1,8 +1,35 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import App from "./App";
 
-test('renders learn react link', () => {
+// Mock framer-motion
+jest.mock("framer-motion", () => ({
+  motion: {
+    div: ({ children, ...props }) => <div {...props}>{children}</div>,
+    header: ({ children, ...props }) => <header {...props}>{children}</header>,
+    section: ({ children, ...props }) => (
+      <section {...props}>{children}</section>
+    ),
+    h1: ({ children, ...props }) => <h1 {...props}>{children}</h1>,
+    h2: ({ children, ...props }) => <h2 {...props}>{children}</h2>,
+    p: ({ children, ...props }) => <p {...props}>{children}</p>,
+    button: ({ children, ...props }) => <button {...props}>{children}</button>,
+    span: ({ children, ...props }) => <span {...props}>{children}</span>,
+  },
+  AnimatePresence: ({ children }) => <>{children}</>,
+}));
+
+// Mock react-router-dom history to avoid navigation side-effects
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+}));
+
+test("renders home hero heading", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/AI Disease/i)).toBeInTheDocument();
+  expect(screen.getAllByText(/Prediction/i).length).toBeGreaterThan(0);
 });
